@@ -1,0 +1,15 @@
+Think english speak russian.
+
+Break down changes between $commit_before_pull and $commit_after_pull in current branch to individual commits.
+Inspect only commits performed in current branch after forking.
+Summarize briefly the matter of changes (no code citation) for every comment.
+
+When making the summary you can traverse more code than you will get directly from diffs for better understanding and clearer description.
+
+Put output to codex-output.txt, replace it if exists. Make some output even when you fail during analysis.
+
+Specify in header (1 line): branch name, inspected commit range. Nothing extra.
+
+Use shor commit numbers, add authors.
+
+Format beautifully for TG.
