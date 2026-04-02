@@ -1,19 +1,19 @@
 # onpush
 
-AI-powered reviewer for Git workflow.
+AI-powered reviewer for Git workflows.
 
-Watches configured set of Gitlab repositories, prepares and sends reports to Telegram channel. 
+This service watches a configured set of GitLab repositories, generates review reports, and sends them to a Telegram channel.
 
 Uses [OpenAI Codex](https://openai.com/codex/) as the code review agent.
 
 ## How It Works
 
-1. Receives a push event from Gitlab.
-2. Fetches repository for specified project.
+1. Receives a push event from GitLab.
+2. Fetches the repository for the specified project.
 3. Runs OpenAI Codex CLI to examine the latest changes and compile a short report.
 4. Sends the report to the configured Telegram chat.
 
-## Install & Run
+## Install
 
 ```bash
 python -m venv .venv
@@ -22,7 +22,9 @@ pip install fastapi uvicorn python-dotenv
 cp .env.example .env
 ```
 
-Install and configure  OpenaAI Codex separately using the official OpenAI docs: https://openai.com/codex/
+Install and configure OpenAI Codex separately by following the official docs:
+
+- [OpenAI Codex](https://openai.com/codex/)
 
 ## Configuration
 
@@ -35,7 +37,7 @@ The service loads variables from `.env`.
 - `SERVER_HOST`: host used by Uvicorn
 - `SERVER_PORT`: port used by Uvicorn
 
-Example values are provided in [`.env.example`](/Users/korytov/projects/onpush/.env.example).
+Example values are provided in [`.env.example`](.env.example).
 
 ## Add a New Repo to Reviewer
 
@@ -66,10 +68,3 @@ The app starts a Uvicorn server using the host, port, and log level from `.env`.
 ## Endpoints
 
 - `POST /webhook/gitlab`: main webhook endpoint
-
-## OpenAI Codex References
-
-- [Codex product page](https://openai.com/codex/)
-- [Introducing Codex](https://openai.com/index/introducing-codex/)
-- [Codex cloud docs](https://platform.openai.com/docs/codex/overview)
-- [Docs MCP](https://platform.openai.com/docs/docs-mcp)
