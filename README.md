@@ -1,8 +1,8 @@
 # onpush
 
-AI-powered reviewer for Git workflows.
+AI-powered Git commit reviewer.
 
-This service watches a configured set of GitLab repositories, generates review reports, and sends them to a Telegram channel.
+This service watches a configured set of GitLab repositories, generates review reports on committed changes, and sends them to a Telegram channel.
 
 Uses [OpenAI Codex](https://openai.com/codex/) as the code review agent.
 
@@ -41,7 +41,7 @@ Example values are provided in [`.env.example`](.env.example).
 
 ## Add a New Repo to Reviewer
 
-To make the reviewer process another repository, add a new entry to `PROJECT_REPO_DIR_MAP` in `.env`.
+To make the reviewer process a repository, add a new entry to `PROJECT_REPO_DIR_MAP` in `.env`.
 
 Example:
 
@@ -53,17 +53,13 @@ Requirements:
 
 - The key must exactly match the GitLab project name from the webhook payload.
 - The value must be an absolute path to the local clone on this machine.
-- The local repository must already exist and have an `origin` remote, because the service runs `git fetch origin`.
-
-After updating `.env`, restart the service so the new mapping is loaded.
+- The local repository must already exist and have an `origin` remote.
 
 ## Run
 
 ```bash
 python main.py
 ```
-
-The app starts a Uvicorn server using the host, port, and log level from `.env`.
 
 ## Endpoints
 
