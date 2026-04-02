@@ -49,6 +49,7 @@ def gitlab_webhook(payload: Any):
     subprocess.run(["git", "checkout", "-B", branch_name], cwd=repo_dir, check=False)
 
     codex_prompt = PROMPT_PATH.read_text()
+    codex_prompt = codex_prompt.replace("$repo_dir", repo_dir)
     codex_prompt = codex_prompt.replace("$branch_name", branch_name)
     codex_prompt = codex_prompt.replace("$commit_ids", commit_ids_for_prompt)
     codex_prompt = codex_prompt.replace("$output_path", str(output_path))
@@ -62,12 +63,11 @@ def gitlab_webhook(payload: Any):
                 "codex",
                 "--model",
                 "gpt-5.3-codex",
-                "--ask-for-approval",
-                "never",
+                "--sandbox",
+                "workspace-write",
                 "exec",
                 codex_prompt,
             ],
-            cwd=repo_dir,
             text=True,
             env=codex_env,
         ).strip()

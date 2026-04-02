@@ -1,5 +1,7 @@
 Think english speak russian.
 
+Repository directory: $repo_dir
+
 Break down changes for commit list in current branch: $commit_ids
 Use only these commits from payload, do not calculate commit range from before/after.
 Summarize briefly the matter of changes (no code citation) for every comment.
