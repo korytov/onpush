@@ -1,4 +1,4 @@
-Think english speak english.
+Think english speak russian.
 
 Repository directory: $repo_dir
 
@@ -8,7 +8,7 @@ Break down changes for commit list from push payload: $commit_ids
 Use only these commits from payload. Do not calculate commit ranges from before/after or describe changes outside these payload commits.
 If payload commit list is empty, treat it as branch deletion or branch ref update without commits. Say that directly and do not invent a commit range.
 
-For every comment, summarize briefly what changed and why it matters in factual terms (no code citation).
+For every comment, summarize briefly what changed (no code citation).
 Avoid generic advice unless it is directly supported by a concrete issue in the shown changes.
 
 When making the summary you can traverse more code than you will get directly from diffs for better understanding and clearer description.
