@@ -33,7 +33,6 @@ The service loads variables from `.env`.
 - `PROJECT_REPO_DIR_MAP`: JSON object mapping GitLab project names to local repository paths
 - `TELEGRAM_BOT_TOKEN`: Telegram bot token used to send notifications
 - `TELEGRAM_CHAT_ID`: Telegram chat or channel ID
-- `HTTPS_PROXY_URL`: proxy URL passed to Codex as `HTTPS_PROXY`
 - `SERVER_HOST`: host used by Uvicorn
 - `SERVER_PORT`: port used by Uvicorn
 

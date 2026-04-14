@@ -1,4 +1,4 @@
-Think english speak russian.
+Think english speak english.
 
 Repository directory: $repo_dir
 
