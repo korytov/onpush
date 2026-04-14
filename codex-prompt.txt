@@ -2,7 +2,7 @@ Think english speak russian.
 
 Repository directory: $repo_dir
 
-Review only facts visible in code and git history. Prefer concrete observations over abstract improvements or broad conclusions.
+Make a survey over last changes in code and git history. Prefer concrete observations over abstract improvements or broad conclusions.
 
 Break down changes for commit list from push payload: $commit_ids
 Use only these commits from payload. Do not calculate commit ranges from before/after or describe changes outside these payload commits.
