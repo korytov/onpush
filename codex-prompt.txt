@@ -2,11 +2,17 @@ Think english speak russian.
 
 Repository directory: $repo_dir
 
-Break down changes for commit list in current branch: $commit_ids
-Use only these commits from payload, do not calculate commit range from before/after.
-Summarize briefly the matter of changes (no code citation) for every comment.
+Review only facts visible in code and git history. Prefer concrete observations over abstract improvements or broad conclusions.
+
+Break down changes for commit list from push payload: $commit_ids
+Use only these commits from payload. Do not calculate commit ranges from before/after or describe changes outside these payload commits.
+If payload commit list is empty, treat it as branch deletion or branch ref update without commits. Say that directly and do not invent a commit range.
+
+For every comment, summarize briefly what changed and why it matters in factual terms (no code citation).
+Avoid generic advice unless it is directly supported by a concrete issue in the shown changes.
 
 When making the summary you can traverse more code than you will get directly from diffs for better understanding and clearer description.
+If one of the payload commits is a merge commit, do not retell every merged commit description. Mention the merge briefly only when it adds new information not already covered by the branch commits.
 
 Put output to $output_path, replace it if exists. Make some output even when you fail during analysis.
 
